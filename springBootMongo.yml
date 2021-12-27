@@ -1,4 +1,4 @@
-apiVersion: V1
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: springappconfigmap
@@ -7,7 +7,7 @@ data:
   password: mongodb@123
 
 ---
-apiVersion: V1
+apiVersion: v1
 kind: Secret
 metadata:
   name: springappsecrets
@@ -16,7 +16,7 @@ stringData:   # We can define multiple key value pairs.
   password: devdb@123
 
 ---
-apiVersion: V1
+apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: pv-hostpath
@@ -29,7 +29,7 @@ spec:
   hostPath:
     path: "/tmp/mongodata"
 ---
-apiVersion: V1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-hostpath
@@ -77,7 +77,7 @@ spec:
         - name: MONGO_DB_HOSTNAME
           value: mongo
 ---
-apiVersion: V1
+apiVersion: v1
 kind: Service
 metadata:
   name: springapp
@@ -128,7 +128,7 @@ spec:
          - name: mongodb-pvc
            mountPath: /data/db
 ---
-apiVersion: V1
+apiVersion: v1
 kind: Service
 metadata:
   name: mongo
